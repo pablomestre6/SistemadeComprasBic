@@ -1,0 +1,43 @@
+﻿@model SistemadeComprasBic.Models.ReceiptNF
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ReceiptNF</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NumberNF" class="control-label"></label>
+                <input asp-for="NumberNF" class="form-control" />
+                <span asp-validation-for="NumberNF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Approves" class="control-label"></label>
+                <input asp-for="Approves" class="form-control" />
+                <span asp-validation-for="Approves" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NotAproves" class="control-label"></label>
+                <input asp-for="NotAproves" class="form-control" />
+                <span asp-validation-for="NotAproves" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
